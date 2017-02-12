@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw'
 
-const BOOKS_API: string = "/books";
+const BOOKS_API: string = "./assets/data.json";
 
 @Injectable()
 export class FakeService {
@@ -17,7 +17,7 @@ export class FakeService {
   getBooks(): Observable<any[]>{
     return this.http
       .get(BOOKS_API)
-      .map(resp => resp.json())
+      .map(resp => resp.json().books)
       .catch((error: any) => Observable.throw(error.json()));
   }
 

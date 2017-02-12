@@ -1,0 +1,19 @@
+<h1>Book data from the Fake REST API</h1>
+<div *ngIf="books">
+  <table class="pure-table pure-table-bordered">
+      <thead>
+          <tr>
+              <th>Book Id</th>
+              <th>Book Title</th>
+              <th>Author Name</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let book of books;">
+              <td>{{book.book_id}}</td>
+              <td>{{book.book_title}}</td>
+              <td>{{book.author_name}}</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
